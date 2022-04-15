@@ -3,7 +3,7 @@ package com.appsian.composenoteapp.utils
 import androidx.room.TypeConverter
 import java.util.*
 
-class Converters {
+class DateConverter {
     @TypeConverter
     fun fromTimestamp(value: Long?): Date? {
         return value?.let { Date(it) }
@@ -13,4 +13,6 @@ class Converters {
     fun dateToTimestamp(date: Date?): Long? {
         return date?.time?.toLong()
     }
+
+
 }

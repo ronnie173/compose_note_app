@@ -25,6 +25,7 @@ import com.appsian.composenoteapp.components.NoteButton
 import com.appsian.composenoteapp.components.NoteInputText
 import com.appsian.composenoteapp.data.NotesDataSource
 import com.appsian.composenoteapp.model.Note
+import com.appsian.composenoteapp.utils.formatDate
 import java.time.format.DateTimeFormatter
 
 @Composable
@@ -130,8 +131,7 @@ fun NoteRow(
         ) {
             Text(text = note.title, style = MaterialTheme.typography.subtitle2)
             Text(text = note.description, style = MaterialTheme.typography.subtitle1)
-//            Text(text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, d MMM")
-//            ), style = MaterialTheme.typography.caption)
+            Text(text = formatDate(note.entryDate.time), style = MaterialTheme.typography.caption)
         }
     }
 }
